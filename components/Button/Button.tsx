@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { buttonStyles } from '../../theme/mixins'
 
 export type ButtonProps = {
-  children: string
+  children: ReactNode
 }
 
 const ButtonWrapper = styled.button`

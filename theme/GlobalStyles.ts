@@ -30,7 +30,16 @@ const GlobalStyles = createGlobalStyle`
     outline-offset: 0.25rem;
     outline: 0.25rem dashed var(--color-primary);
   }
-  body,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  @media all and (min-width: 1300px) {
+    body {
+      padding-top: 8rem; 
+    }
+  }
+  
   h1,
   h2,
   h3,

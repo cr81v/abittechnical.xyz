@@ -99,7 +99,7 @@ const Header = ({}: HeaderProps) => {
           <MenuTrigger>↴</MenuTrigger>
         </FlexBox>
         <Description>
-          Articles about software engineering. A platform for learning
+          Software related color commentary, in black & white
         </Description>
         <Author>
           Maintained by{' '}

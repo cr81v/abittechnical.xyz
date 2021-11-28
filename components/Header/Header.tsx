@@ -28,12 +28,17 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  & > * + * {
+    margin-top: 0.5em;
+  }
 
   @media all and (min-width: 1300px) {
     padding: 0;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: left;
     h1,
     h2,
     p {
@@ -51,18 +56,9 @@ const HeaderContainer = styled.div`
 
 const Brand = styled.h1`
   font-size: 1.5rem;
-`
-
-const MenuTrigger = styled.button`
-  background: none;
-  cursor: pointer;
-  border: none;
-  font-family: var(--font-family-secondary);
-  display: block;
-  margin-left: auto;
-  padding-left: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
+  span.alias {
+    color: var(--color-brand);
+  }
 `
 
 const FlexBox = styled.div`
@@ -79,9 +75,11 @@ const Description = styled.h2`
 `
 
 const LoginCallToAction = styled.button`
-  ${buttonStyles};
   padding: 1em 1.5em;
   line-height: 1;
+  @media all and (max-width: 1300px) {
+    ${buttonStyles};
+  }
 `
 
 const Author = styled.p``
@@ -93,17 +91,18 @@ const Header = ({}: HeaderProps) => {
         <FlexBox>
           <Link href="/">
             <a>
-              <Brand>A Bit Technical</Brand>
+              <Brand>
+                A <span className="alias">Bit</span> Technical
+              </Brand>
             </a>
           </Link>
-          <MenuTrigger>↴</MenuTrigger>
         </FlexBox>
         <Description>
           Software related color commentary, in black & white
         </Description>
         <Author>
           Maintained by{' '}
-          <StyledLink href="#" forwardedAs="#">
+          <StyledLink href="#" as="#">
             The Tellusstraighter
           </StyledLink>
         </Author>

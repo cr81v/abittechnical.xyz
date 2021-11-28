@@ -1,20 +1,15 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { ReactNode } from 'react'
 
 export type StyledLinkProps = {
   children: string
-  as?: string
+  as: string
   className?: string
   href: string
 }
 
-const LinkWrapper = ({ as, children, className, href }: StyledLinkProps) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-const StyledLink = styled(LinkWrapper)`
+const CustomLink = styled.a`
   text-decoration: none;
   font-weight: 600;
   border-bottom: 2px solid;
@@ -23,5 +18,11 @@ const StyledLink = styled(LinkWrapper)`
     border-bottom-width: 4px;
   }
 `
+
+const StyledLink = ({ as, children, className, href }: StyledLinkProps) => (
+  <Link href={href} as={as} passHref>
+    <CustomLink className={className}>{children}</CustomLink>
+  </Link>
+)
 
 export default StyledLink

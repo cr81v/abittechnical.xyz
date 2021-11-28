@@ -1,14 +1,14 @@
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import Menu, { DropDownProps } from './Menu'
+import Menu, { MenuProps } from './Menu'
 
 export default {
-  title: 'Components/Drop Down',
+  title: 'Components/Menu',
   component: Menu,
   argTypes: {},
-} as Meta<DropDownProps>
+} as Meta<MenuProps>
 
-const Template: Story<DropDownProps> = args => <Menu {...args} />
+const Template: Story<MenuProps> = args => <Menu {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}

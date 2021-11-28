@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --color-primary: ${({ theme }) => theme.colors.primary};
     --color-primary-alt: ${({ theme }) => theme.colors.primaryAlt};
     --color-secondary: ${({ theme }) => theme.colors.secondary};
+    --color-brand: ${({ theme }) => theme.colors.brand};
     --font-family-primary: ${({ theme }) => theme.fontFamily.primary};
     --font-family-secondary: ${({ theme }) => theme.fontFamily.secondary};
     
@@ -71,6 +72,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     color: inherit;
+    text-decoration: none;
   }
   input,
   button,

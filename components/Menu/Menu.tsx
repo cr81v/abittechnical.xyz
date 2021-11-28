@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export type DropDownProps = {}
+export type MenuProps = {}
 
 const links = [
   { href: '#', text: 'All Articles', icon: '↴' },
@@ -9,7 +9,7 @@ const links = [
   { href: '#', text: 'Tags', icon: '↴' },
   { href: '#', text: 'TLDR;(s)', icon: '↴' },
   { href: '#', text: 'About', icon: '↴' },
-  { href: '#', text: 'Source Codes', icon: '→' },
+  { href: '#', text: 'Source Files', icon: '→' },
 ]
 
 const Nav = styled.nav`
@@ -19,9 +19,7 @@ const Nav = styled.nav`
   font-size: 1rem;
   width: 100%;
   margin-bottom: 2rem;
-  li + li {
-    border-top: 4px solid;
-  }
+  
 
   @media all and (min-width: 1300px) {
     border: 4px solid var(--color-primary);
@@ -43,20 +41,32 @@ const NavLinks = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
 
-  li:nth-child(2n + 1) {
+  li:nth-child(2n+1) {
     border-right: 4px solid;
+  }
+  li:nth-child(n+3) {
+    border-top: 4px solid;
   }
 
   @media all and (min-width: 1300px) {
     flex-direction: column;
-    li:nth-child(2n + 1) {
+    li:nth-child(2n+1) {
       border-right: none;
     }
   }
 `
 
 const NavLinkItem = styled.li`
-  width: 100%;
+  width: 50%;
+   & + & {
+     border-top: none;
+  }
+  @media all and (min-width: 1300px) {
+    width: 100%;
+    & + & {
+      border-top: 4px solid;
+    }
+  }
 `
 const NavLink = styled.a`
   cursor: pointer;

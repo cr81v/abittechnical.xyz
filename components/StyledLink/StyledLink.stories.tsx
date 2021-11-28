@@ -12,6 +12,6 @@ const Template: Story<StyledLinkProps> = args => <StyledLink {...args} />
 export const Default = Template.bind({})
 Default.args = {
   href: '/post/[pid]',
-  forwardedAs: '/post/abc',
+  as: '/post/abc',
   children: 'First post',
 }
